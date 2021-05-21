@@ -4,6 +4,7 @@ import { PodcastsModule } from "./podcast/podcasts.module";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { Podcast } from "./podcast/entities/podcast.entity";
 import { Episode } from "./podcast/entities/episode.entity";
+import { Review } from "./podcast/entities/review.entity";
 import { User } from "./users/entities/user.entity";
 import { UsersModule } from "./users/users.module";
 import { JwtModule } from "./jwt/jwt.module";
@@ -17,7 +18,7 @@ import { AuthModule } from "./auth/auth.module";
       database: "db.sqlite3",
       synchronize: true,
       logging: process.env.NODE_ENV !== "test",
-      entities: [Podcast, Episode, User]
+      entities: [Podcast, Episode, User, Review]
     }),
     GraphQLModule.forRoot({
       autoSchemaFile: true,
